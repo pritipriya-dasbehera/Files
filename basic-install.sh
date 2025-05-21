@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install riseup-vpn vlc filelight okular synaptic timeshift flatpak plasma-discover-backend-flatpak
+sudo apt-get install riseup-vpn vlc filelight okular synaptic timeshift flatpak plasma-discover-backend-flatpak wget
 
 echo "installing brave now"
 curl -fsS https://dl.brave.com/install.sh | sh
@@ -32,4 +32,11 @@ sudo apt install touchegg
 echo "installing touche"
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.github.joseexposito.touche
+
+echo "installing ruby"
+wget https://github.com/postmodern/ruby-install/releases/download/v0.10.1/ruby-install-0.10.1.tar.gz
+tar -xzvf ruby-install-0.10.1.tar.gz
+cd ruby-install-0.10.1/
+sudo make install
+ruby-install ruby
 
